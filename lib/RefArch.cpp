@@ -34,7 +34,7 @@ namespace RA_filesystem = std::filesystem;
 namespace RA_filesystem = boost::filesystem;
 #endif
 
-bool RefArch::RA_stop_signal_called = false;
+std::atomic<bool> RefArch::RA_stop_signal_called{false};  // 
 
 
 void RefArch::parseConfig()

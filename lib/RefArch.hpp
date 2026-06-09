@@ -251,7 +251,9 @@ public:
     /**
      * @brief Used to shutdown all threads.
      */
-    static bool RA_stop_signal_called;
+    
+    static std::atomic<bool> RA_stop_signal_called; // fix
+
     std::vector<std::thread> RA_rx_vector_thread;
     std::vector<std::thread> RA_tx_vector_thread;
 
